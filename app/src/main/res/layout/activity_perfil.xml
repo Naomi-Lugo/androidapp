@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".perfil">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/top_background"
+        android:backgroundTint="@color/theme_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:text="Perfil"
+            android:textAlignment="center"
+            android:textColor="@color/theme_color_text_button"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/etid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableStart="@drawable/baseline_search_24"
+            android:drawablePadding="15dp"
+            android:drawableTint="@color/theme_color_text_button"
+            android:hint="Buscar"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="#979797" />
+
+        <EditText
+            android:id="@+id/etusu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:drawablePadding="15dp"
+            android:drawableTint="@color/theme_color_text_button"
+            android:hint="Usuario"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="#979797" />
+
+
+        <EditText
+            android:id="@+id/etcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="15dp"
+            android:drawableTint="@color/theme_color_text_button"
+            android:hint="Usuario"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="#979797" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="184dp"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:textColor="@color/theme_color_text_button"
+            app:iconTint="@color/theme_color_text_button" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/lato_bold"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="openSignUpPage"
+            android:padding="15dp"
+            android:textAllCaps="false"
+            android:textColor="@color/theme_color_text_button"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/theme_button"
+        android:fontFamily="@font/lato_bold"
+        android:text="Buscar"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/theme_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.253"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.837" />
+
+    <Button
+        android:id="@+id/btnedit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/theme_button"
+        android:fontFamily="@font/lato_bold"
+        android:text="Editar"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/theme_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.757"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.837" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
