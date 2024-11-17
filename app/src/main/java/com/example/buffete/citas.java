@@ -56,21 +56,21 @@ public class citas extends AppCompatActivity {
         btnagregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-ejecutarServicio("http://192.168.0.12" +
+ejecutarServicio("http://192.168.100.18" +
         "/projectdb/consulta.php");
             }
         });
         btnbuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Buscar("http://192.168.0.12/projectdb/buscar.php?id="+etbuscar.getText()+"");
+                Buscar("http://192.168.100.18/projectdb/buscar.php?id="+etbuscar.getText()+"");
             }
         });
 
         btneditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ejecutarServicio("http://192.168.0.12/projectdb/editar.php");
+                ejecutarServicio("http://192.168.100.18/projectdb/editar.php");
             }
         });
     }
@@ -135,6 +135,7 @@ ejecutarServicio("http://192.168.0.12" +
         requestQueue.add(JsonArrayRequest);
     }
     }
+
 
 
 

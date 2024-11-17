@@ -51,20 +51,20 @@ public class registro extends AppCompatActivity {
         btnbu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Buscar("http://192.168.0.12/projectdb/buscar_usuario.php?id="+etbu.getText()+"");
+                Buscar("http://192.168.100.18/projectdb/buscar_usuario.php?id="+etbu.getText()+"");
             }
         });
         btnsign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RegistrarUsuario("http://192.168.0.12/projectdb/registrar.php");
+                RegistrarUsuario("http://192.168.100.18/projectdb/registrar.php");
             }
         });
 
         btnedi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RegistrarUsuario("http://192.168.0.12/projectdb/editar_usuario.php");
+                RegistrarUsuario("http://192.168.100.18/projectdb/editar_usuario.php");
             }
         });
     }
