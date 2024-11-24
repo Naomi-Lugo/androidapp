@@ -20,9 +20,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,8 +51,7 @@ public class login extends AppCompatActivity {
         btnsing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                validarUsuario("http://0.0.0.0:3000/usuarios");
-               // validarUsuario("http://192.168.90.198/projectdb/validar_usuario.php");
+                validarUsuario("http://192.168.100.18/projectdb/validar_usuario.php");
             }
         });
 
@@ -66,31 +62,26 @@ public class login extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            boolean success = jsonObject.getBoolean("success");
-                            if (success) {
-                                Intent intent = new Intent(getApplicationContext(), menu.class);
-                                startActivity(intent);
-                            } else {
-                                Toast.makeText(login.this, "Usuario y/o contraseña incorrecto", Toast.LENGTH_LONG).show();
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            Toast.makeText(login.this, "Error al procesar la respuesta", Toast.LENGTH_LONG).show();
+                        if (!response.isEmpty()) {
+                            Intent intent = new Intent(getApplicationContext(), menu.class);
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(login.this, "Usuario y/o contraseña incorrecto", Toast.LENGTH_LONG).show();
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(login.this, "Error: " + error.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(login.this, error.toString(), Toast.LENGTH_LONG).show();
+                        System.out.println(error.toString());
                     }
                 }) {
             @Nullable
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> parametros = new HashMap<>();
+            protected Map<String,String> getParams() throws AuthFailureError {
+
+                Map<String,String> parametros = new HashMap<String,String>();
                 parametros.put("usuario", etmail.getText().toString());
                 parametros.put("contraseña", etcontraseña.getText().toString());
                 return parametros;
@@ -99,5 +90,4 @@ public class login extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
-
 }

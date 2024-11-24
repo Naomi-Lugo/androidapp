@@ -10,7 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 public class menu extends AppCompatActivity {
-    Button btncalendario,btnperfil,btnagenda,btnagregar,btnmail,btnacceso;
+    Button btncalendario,btnPerfil,btnagenda,btnagregar,btnmail,btnacceso;
 
 
     @Override
@@ -21,7 +21,7 @@ public class menu extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,  WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_menu);
         btncalendario=findViewById(R.id.btncalendario);
-        btnperfil=findViewById(R.id.btnperfil);
+        btnPerfil=findViewById(R.id.btnPerfil);
         btnagenda=findViewById(R.id.btnagenda);
         btnagregar=findViewById(R.id.btnagregar);
         btnmail=findViewById(R.id.btnmail);
@@ -34,7 +34,7 @@ public class menu extends AppCompatActivity {
                 startActivityForResult(intent, 0);
             }
         });
-        btnperfil.setOnClickListener(new View.OnClickListener() {
+        btnPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent (view.getContext(), perfil.class);
