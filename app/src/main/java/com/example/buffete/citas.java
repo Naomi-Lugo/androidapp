@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -56,21 +57,21 @@ public class citas extends AppCompatActivity {
         btnagregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-ejecutarServicio("http://192.168.90.87" +
+ejecutarServicio("http://192.168.100.18" +
         "/projectdb/consulta.php");
             }
         });
         btnbuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Buscar("http://192.168.90.87/projectdb/buscar.php?id="+etbuscar.getText()+"");
+                Buscar("http://192.168.100.18/projectdb/buscar.php?id=" + etbuscar.getText().toString().trim());
             }
         });
 
         btneditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ejecutarServicio("http://192.168.90.87/projectdb/editar.php");
+                ejecutarServicio("http://192.168.100.18/projectdb/editar.php");
             }
         });
     }
@@ -83,9 +84,8 @@ ejecutarServicio("http://192.168.90.87" +
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
-                System.out.println(error.toString());
-                // Usar Log en lugar de System.out.println
+                Toast.makeText(getApplicationContext(), "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e("VolleyError", error.toString()); // Agregar para depuración
             }
         }) {
             @Nullable

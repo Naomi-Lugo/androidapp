@@ -7,13 +7,10 @@
     android:background="@drawable/fondo4"
     tools:context=".perfil">
 
-
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-
         android:backgroundTint="@color/theme_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,24 +27,17 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <ImageView
-            android:id="@+id/ivFotoPerfil"
+            android:id="@+id/imgFoto"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:contentDescription="Foto de Perfil"
             android:src="@drawable/ic_baseline_person_24" />
 
         <Button
-            android:id="@+id/btnGaleria"
-            android:text="Galería"
+            android:id="@+id/btnTomar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/btnCamara"
-            android:text="Cámara"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
+            android:layout_height="wrap_content"
+            android:text="Tomar fotografia" />
 
         <TextView
             android:layout_width="match_parent"
@@ -57,23 +47,6 @@
             android:textAlignment="center"
             android:textColor="@color/theme_color_text_button"
             android:textSize="25sp" />
-
-        <EditText
-            android:id="@+id/etid"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/edit_text_background"
-            android:drawableStart="@drawable/baseline_search_24"
-            android:drawablePadding="15dp"
-            android:drawableTint="@color/theme_color_text_button"
-            android:hint="Buscar"
-            android:inputType="textEmailAddress"
-            android:padding="15dp"
-            android:textColor="@color/black"
-            android:textColorHint="#979797" />
 
         <EditText
             android:id="@+id/etusu"
@@ -92,7 +65,6 @@
             android:textColor="@color/black"
             android:textColorHint="#979797" />
 
-
         <EditText
             android:id="@+id/etcon"
             android:layout_width="match_parent"
@@ -104,8 +76,8 @@
             android:drawableStart="@drawable/ic_baseline_lock_24"
             android:drawablePadding="15dp"
             android:drawableTint="@color/theme_color_text_button"
-            android:hint="Usuario"
-            android:inputType="textEmailAddress"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
             android:padding="15dp"
             android:textColor="@color/black"
             android:textColorHint="#979797" />
@@ -116,8 +88,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="10dp"/>
-
+            android:layout_marginBottom="10dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -153,16 +124,6 @@
             android:textSize="17sp" />
 
         <Button
-            android:id="@+id/button_send"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/theme_button"
-            android:fontFamily="@font/lato_bold"
-            android:text="Buscar"
-            android:textColor="@color/white"
-            app:backgroundTint="@color/theme_color" />
-
-        <Button
             android:id="@+id/btnedit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -172,6 +133,4 @@
             android:textColor="@color/white"
             app:backgroundTint="@color/theme_color" />
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

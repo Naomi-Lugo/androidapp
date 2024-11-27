@@ -10,7 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 public class menu extends AppCompatActivity {
-    Button btncalendario,btnPerfil,btnagenda,btnagregar,btnmail,btnacceso;
+    Button btncalendario,btnperfil,btnagenda,btnagregar,btnmail,btnacceso;
 
 
     @Override
@@ -21,11 +21,11 @@ public class menu extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,  WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_menu);
         btncalendario=findViewById(R.id.btncalendario);
-        btnPerfil=findViewById(R.id.btnPerfil);
+        btnperfil=findViewById(R.id.btnperfil);
         btnagenda=findViewById(R.id.btnagenda);
         btnagregar=findViewById(R.id.btnagregar);
         btnmail=findViewById(R.id.btnmail);
-        btnacceso=findViewById(R.id.btnacceso);
+      //  btnacceso=findViewById(R.id.btnacceso);
 
         btncalendario.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,7 +34,7 @@ public class menu extends AppCompatActivity {
                 startActivityForResult(intent, 0);
             }
         });
-        btnPerfil.setOnClickListener(new View.OnClickListener() {
+        btnperfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent (view.getContext(), perfil.class);
@@ -65,13 +65,13 @@ public class menu extends AppCompatActivity {
             }
         });
 
-        btnacceso.setOnClickListener(new View.OnClickListener() {
+        /*btnacceso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent (view.getContext(), Acceso.class);
                 startActivityForResult(intent, 0);
             }
-        });
+        });*/
 
     }
 }
